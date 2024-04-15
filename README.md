@@ -115,3 +115,19 @@
 - 가스 리밋을 설정할 수 있다.
 
 - 가스 프라이스는 가스당 가격을 의미하며 (가스 사용량 x 가스 프라이스)가 수수료가 된다.
+
+## 투표 앱 만들기
+
+- [remix.ethereum.org](https://remix.ethereum.org/)를 사용
+
+- ![image](./img/functions.PNG)
+
+- 실행하면 컨트랙트에서 구현한 메소드의 목록을 Swagger에서 API를 확인하듯이 확인할 수 있다.
+
+- ![image](./img/debug.PNG)
+
+- 디버깅도 가능하며 다른 프로그래밍 언어와 마찬가지로 컨트랙트 내 변수의 값을 알 수 있다.
+
+- ![image](./img/duplicaterevert.PNG)
+
+- 기능 구현을 모두 확인했다. 중복 투표, 후보자 수 초과, 인가되지 않은 사용자의 finish 접근, finish 이후의 투표 등의 경우 revert되는 것을 확인할 수 있다.
