@@ -16,14 +16,24 @@ spec:
       containers:
         - name: geth
           image: ethereum/client-go:stable
+          command: ["geth"]
           args:
-            - "--syncmode=snap"
-            - "--http"
-            - "--http.addr=0.0.0.0"
-            - "--http.api=eth,net,web3,debug"
-            - "--metrics"
-            - "--metrics.addr=0.0.0.0"
-            - "--networkid=1337"
+            [
+              "--dev",
+              "--http",
+              "--http.api",
+              "eth,net,web3,miner,admin,txpool,personal",
+            ]
+          # args:
+          #   - "--http"
+          #   - "--http.addr=0.0.0.0"
+          #   - "--http.vhosts=*"
+          #   - "--http.api=eth,net,web3,personal,miner,admin"
+          #   - "--networkid=1337"
+          #   - "--mine"
+          #   - "--allow-insecure-unlock"
+          #   - "--nodiscover"
+          #   - "--verbosity=3"
           ports:
             - containerPort: 8545
               name: rpc
@@ -44,4 +54,4 @@ spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: 100Gi
+            storage: 50Gi

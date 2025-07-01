@@ -14,4 +14,4 @@ spec:
       protocol: UDP
       port: 30303
       targetPort: 30303
-  type: NodePort # 외부 접근 허용
+  type: ClusterIP
